@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+</head>
+
+<body>
+  <table>
+    <tr>
+      <td>Target y<sup>+</sup> </td>
+      <td>
+        <input class="textbox" type="number" id="InputTargetYPlus" value="50" />
+      </td>
+      <td id="infoInputYPlus" style="color:red"></td>
+    </tr>
+    <tr>
+      <td>Product:</td>
+      <td>
+        <input type="radio" name="ProductType" checked="true" id="RadioFluent" />
+        <label>ANSYS Fluent</label>
+      </td>
+      <td>
+        <input type="radio" name="ProductType" id="RadioAIM" />
+        <label>AIM</label>
+      </td>
+      <td>
+        <input type="radio" name="ProductType" id="RadioCFX" />
+        <label>ANSYS CFX</label>
+      </td>
+    </tr>
+    <tr>
+      <td>Flow Type</td>
+      <td>
+        <input type="radio" name="FlowType" checked="true" id="ExternalFlow" onchange="ChangeFlowType()" />External
+      </td>
+      <td>
+        <input type="radio" name="FlowType" id="InternalFlow" onchange="ChangeFlowType()" />Internal
+      </td>
+    </tr>
+    <tr>
+      <td>Velocity</td>
+      <td>
+        <input class="textbox" type="number" value="10.0" id="InputVelocity" /> m s<sup>-1</sup>
+      </td>
+      <td colspan="3" rowspan="4" style="width:325px;hight:400px;">
+        <img src="http://www.computationalfluiddynamics.com.au/wp-content/uploads/2016/03/external.png" id="ImgFlowType">
+      </td>
+    </tr>
+    <tr>
+      <td id="dimType">Length</td>
+      <td>
+        <input class="textbox" type="number" value="1.0" id="InputLength" /> m
+      </td>
+    </tr>
+    <tr>
+      <td>Density</td>
+      <td>
+        <input class="textbox" type="number" value="1.2" id="InputDensity" /> kg m<sup>-3</sup>
+      </td>
+    </tr>
+    <tr>
+      <td>Viscosity</td>
+      <td>
+        <input class="textbox" type="number" value="1.789e-5" id="InputNu" /> Pa s
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td colspan="2">
+        <button class="calbutton" onclick="ComputeCellHight()">Calculate</button>
+      </td>
+    </tr>
+    <tr style="font-weight:bolder">
+      <td>Cell Height</td>
+      <td colspan="3"><a id="cHightM">0.0 </a> m</td>
+    </tr>
+    <tr style="font-weight:bolder">
+      <td></td>
+      <td colspan="3"><a id="cHightMM">0.0 </a> mm</td>
+    </tr>
+  </table>
+
+</body>
+</html>
